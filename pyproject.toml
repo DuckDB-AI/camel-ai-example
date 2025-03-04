@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "hackathon_judge"
 version = "0.1.0"
@@ -23,7 +27,3 @@ hackathon_judge = "hackathon_judge.main:run"
 [tool.poetry.dependencies.naptha-sdk]
 git = "https://github.com/NapthaAI/naptha-sdk.git"
 branch = "plugins"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
