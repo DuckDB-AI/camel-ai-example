@@ -10,7 +10,6 @@ python = ">=3.10,<3.13"
 camel-ai = {version = "0.2.20", extras = []} 
 # install camel-ai from 
 python-dotenv = "^1.0.1"
-naptha-sdk = {path = "/Users/vedantpadwal/Naptha/plugins/naptha-sdk", develop = true}
 protobuf = "^5.26.1"
 pillow = "^11.1.0"
 requests-oauthlib = "^2.0.0"
@@ -20,6 +19,10 @@ duckduckgo-search = "^7.5.0"
 googlemaps = "^4.10.0"
 [tool.poetry.scripts]
 hackathon_judge = "hackathon_judge.main:run"
+
+[tool.poetry.dependencies.naptha-sdk]
+git = "https://github.com/NapthaAI/naptha-sdk.git"
+branch = "plugins"
 
 [build-system]
 requires = ["poetry-core"]
