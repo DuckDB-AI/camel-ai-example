@@ -1,29 +1,29 @@
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "hackathon_judge"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
 readme = "README.md"
+dependencies = [
+    "camel-ai[]==0.2.20",
+    "python-dotenv>=1.0.1,<2",
+    "protobuf>=5.26.1,<6",
+    "pillow>=11.1.0,<12",
+    "requests-oauthlib>=2.0.0,<3",
+    "pandas>=2.2.3,<3",
+    "scikit-learn>=1.6.1,<2",
+    "duckduckgo-search>=7.5.0,<8",
+    "googlemaps>=4.10.0,<5",
+    "naptha-sdk",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-camel-ai = {version = "0.2.20", extras = []} 
-# install camel-ai from 
-python-dotenv = "^1.0.1"
-protobuf = "^5.26.1"
-pillow = "^11.1.0"
-requests-oauthlib = "^2.0.0"
-pandas = "^2.2.3"
-scikit-learn = "^1.6.1"
-duckduckgo-search = "^7.5.0"
-googlemaps = "^4.10.0"
-[tool.poetry.scripts]
+[project.scripts]
 hackathon_judge = "hackathon_judge.main:run"
 
-[tool.poetry.dependencies.naptha-sdk]
-git = "https://github.com/NapthaAI/naptha-sdk.git"
-branch = "plugins"
+[tool.uv.sources]
+naptha-sdk = { git = "https://github.com/NapthaAI/naptha-sdk.git", branch = "plugins" }
